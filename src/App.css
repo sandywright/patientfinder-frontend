@@ -1,0 +1,208 @@
+h3 {
+  font-size: medium;
+}
+
+#navbar {
+  background-color: #2980b9;
+  border-style: none;
+}
+
+#navbar-text {
+  color: white;
+}
+
+#navbar-text:hover {
+  color: #95a5a6;
+}
+
+#navbar-toggle {
+  border-style: none;
+  text-decoration: none;
+}
+
+#navbar-toggle:hover {
+  background-color: #3498db;
+}
+
+#navbar-toggle:active {
+  background-color: #3498db;
+  text-decoration: none;
+}
+
+#navbar-toggle:visited {
+  background-color: #3498db;
+}
+
+#navbar-toggle::selection {
+  background-color: #3498db;
+}
+
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: #95a5a6;
+}
+
+.bread-nav {
+  margin-top: -20px;
+  padding-left: 2em;
+}
+
+.container {
+  width: 95%;
+}
+
+.login-container {
+  background-color: white;
+  margin: 3em;
+  padding: 2em;
+  position: absolute;
+}
+
+.jumbo-button {
+  color: white;
+}
+
+.jumbo-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.login-container {
+  width: 60%;
+
+}
+
+.hospital-search {
+  margin-top: 10px;
+}
+
+#hospital-name-text {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.hospital-div {
+  background-color: #ecf0f1;
+  padding: 1em;
+  margin: 1em;
+  color: black;
+  border-radius: 6px;
+}
+
+.hospital-name-div {
+  background-color: #2980b9;
+  color: white;
+  padding-top: 0.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.2em;
+  margin-top: -1em;
+  margin-right: -1em;
+  margin-left: -1em;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.hospital-link {
+  color: white;
+}
+
+.hospital-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.number-badge {
+  background-color: #72B0D9;
+  font-size: 14px;
+}
+
+.update-label {
+  background-color: #72B0D9;
+  font-size: 14px;
+}
+
+#search-box {
+  text-align: center;
+}
+
+#add-patient-button {
+  margin-top: -20px;
+  height: 40px;
+  text-align: center;
+  background-color: #72B0D9;
+  border-style: none;
+  color: white;
+}
+
+#add-patient-button:hover {
+  background-color: #B3E5FC;
+}
+
+.add-patient-button-text {
+  line-height: 40px;
+}
+
+.add-patient-button:visited {
+  background-color: #27ae60;
+  color: white;
+}
+
+#patient-name-text {
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.patient-div {
+  /*background-color: #ecf0f1;*/
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.1em;
+  margin: 1em;
+  color: black;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: #2980b9;
+
+}
+
+.patient-name-div {
+  background-color: #2980b9;
+  color: white;
+  padding-top: 0.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0.2em;
+  margin-top: -1.1em;
+  margin-right: -1.1em;
+  margin-left: -1.1em;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-style: solid;
+  border-color: #2980b9;
+}
+
+.patient-age-div {
+  float: right;
+  margin-top: -3.25em;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
