@@ -29,10 +29,10 @@ export default class PatientUnit extends Component {
 
   handleClickClerk(patientID) {
     this.setState({isDisabled: true});
-    axios.post(`http://localhost:3001/hospitals/${this.props.hID}/patients/`+patientID+`/clerk-up`)
+    axios.post(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients/`+patientID+`/clerk-up`)
     .then(response => {
       console.log(response);
-      this.props.axiosGet(`http://localhost:3001/hospitals/${this.props.hID}/patients`)
+      this.props.axiosGet(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients`)
     })
     .catch(error => {
       console.log(error);
@@ -40,10 +40,10 @@ export default class PatientUnit extends Component {
   }
 
   handleClickDelete(patientID) {
-    axios.delete(`http://localhost:3001/hospitals/${this.props.hID}/patients/`+patientID)
+    axios.delete(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients/`+patientID)
     .then(response => {
       console.log(response);
-      this.props.axiosGet(`http://localhost:3001/hospitals/${this.props.hID}/patients`)
+      this.props.axiosGet(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients`)
     })
     .catch(error => {
       console.log(error);

@@ -38,7 +38,7 @@ export default class Login extends Component {
   handleSubmit(event) {
     event.preventDefault();
     axios.defaults.withCredentials = true;
-    axios.post('http://localhost:3001/login', {
+    axios.post('http://patientfinder-api.herokuapp.com/login', {
       email: this.state.email,
       password: this.state.password
     })

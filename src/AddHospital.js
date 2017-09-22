@@ -34,7 +34,7 @@ export default class AddHospital extends Component {
               </FormGroup>
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button type="submit" onClick={this.close}>Submit</Button>
+                  <Button type="submit" onClick={this.props.close}>Submit</Button>
                 </Col>
               </FormGroup>
             </Form>

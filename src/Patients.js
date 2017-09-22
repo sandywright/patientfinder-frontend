@@ -40,6 +40,7 @@ export default class Patients extends Component {
   }
 
   axiosGet(url) {
+    axios.defaults.withCredentials = true;
     axios.get(url)
       .then(response => {
         console.log(response.data);
@@ -63,7 +64,9 @@ export default class Patients extends Component {
   }
 
   handleSubmit(event) {
-    axios.post(`http://localhost:3001/hospitals/${this.props.match.params.hID}/patients`, {
+    event.preventDefault();
+    axios.defaults.withCredentials = true;
+    axios.post(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.match.params.hID}/patients`, {
       location: this.state.location,
       bed: this.state.bed,
       gender: this.state.gender,
@@ -73,7 +76,7 @@ export default class Patients extends Component {
     })
     .then(response => {
       console.log(response);
-      this.axiosGet(`http://localhost:3001/hospitals/${this.props.match.params.hID}/patients`)
+      this.axiosGet(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.match.params.hID}/patients`)
     })
     .catch(error => {
       console.log(error);
@@ -81,7 +84,7 @@ export default class Patients extends Component {
   }
 
   componentDidMount() {
-    this.axiosGet(`http://localhost:3001/hospitals/${this.props.match.params.hID}/patients`)
+    this.axiosGet(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.match.params.hID}/patients`)
   }
 
   render() {

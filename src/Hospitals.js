@@ -90,13 +90,14 @@ export default class Hospitals extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     axios.defaults.withCredentials = true;
-    axios.post('http://localhost:3001/hospitals', {
+    axios.post('http://patientfinder-api.herokuapp.com/hospitals', {
       name: this.state.hospital
     })
     .then(response => {
-      console.log(response);
-      this.axiosGet('http://localhost:3001/hospitals');
+      console.log(response.data);
+      this.axiosGet('http://patientfinder-api.herokuapp.com/hospitals');
     })
     .catch(error => {
       console.log(error);
@@ -104,7 +105,7 @@ export default class Hospitals extends Component {
   }
 
   componentDidMount() {
-    this.axiosGet('http://localhost:3001/hospitals');
+    this.axiosGet('http://patientfinder-api.herokuapp.com/hospitals');
   }
 
   render() {

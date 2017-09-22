@@ -25,7 +25,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios.defaults.withCredentials = true;
-    axios.get('http://localhost:3001/profile')
+    axios.get('http://patientfinder-api.herokuapp.com/profile')
       .then(response => {
         console.log(response.data);
         this.setState({

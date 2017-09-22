@@ -34,7 +34,8 @@ export default class Register extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    axios.post('/register', {
+    axios.defaults.withCredentials = true;
+    axios.post('http://patientfinder-api.herokuapp.com/register', {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,

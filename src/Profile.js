@@ -14,7 +14,7 @@ export default class Profile extends Component {
 
   handleSubmit(event) {
     axios.defaults.withCredentials = true;
-    axios.get('http://localhost:3001/logout')
+    axios.get('http://patientfinder-api.herokuapp.com/logout')
     .then(response => {
       console.log(response);
       this.props.history.push('/');
