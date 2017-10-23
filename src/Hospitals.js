@@ -40,8 +40,17 @@ export default class Hospitals extends Component {
   }
 
   axiosGet(url) {
+
+    //
+    const token = localStorage.getItem('token');
+	  const config = {
+	     headers: { 'x-access-token': `${token}` },
+    };
+    console.log(token);
+    //
+
     axios.defaults.withCredentials = true;
-    axios.get(url)
+    axios.get(url, config)
       .then(response => {
         console.log(response.data);
         this.setState({
@@ -90,11 +99,18 @@ export default class Hospitals extends Component {
   }
 
   handleSubmit(event) {
+    //
+    const token = localStorage.getItem('token');
+	  const config = {
+	     headers: { 'x-access-token': `${token}` },
+    };
+    //
+
     event.preventDefault();
     axios.defaults.withCredentials = true;
     axios.post('http://patientfinder-api.herokuapp.com/hospitals', {
       name: this.state.hospital
-    })
+    }, config)
     .then(response => {
       console.log(response.data);
       this.axiosGet('http://patientfinder-api.herokuapp.com/hospitals');

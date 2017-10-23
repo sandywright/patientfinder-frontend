@@ -43,11 +43,12 @@ export default class Login extends Component {
       password: this.state.password
     })
     .then(response => {
-      console.log(response);
+
+      localStorage.setItem('token', response.data.token);
       this.setState({
         sessionID: response.data
       })
-      this.props.history.push('/profile');
+      this.props.history.push('/hospitals');
     })
     .catch(error => {
       console.log(error);

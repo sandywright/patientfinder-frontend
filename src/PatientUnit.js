@@ -28,8 +28,14 @@ export default class PatientUnit extends Component {
   }
 
   handleClickClerk(patientID) {
-    this.setState({isDisabled: true});
-    axios.post(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients/`+patientID+`/clerk-up`)
+
+    //
+    const token = localStorage.getItem('token');
+	  const config = {
+	     headers: { 'x-access-token': `${token}` }
+    };
+    //
+    axios.post(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients/`+patientID+`/clerk-up`, {}, config)
     .then(response => {
       console.log(response);
       this.props.axiosGet(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients`)
@@ -37,10 +43,17 @@ export default class PatientUnit extends Component {
     .catch(error => {
       console.log(error);
     });
+    this.setState({isDisabled: true});
   }
 
   handleClickDelete(patientID) {
-    axios.delete(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients/`+patientID)
+    //
+    const token = localStorage.getItem('token');
+	  const config = {
+	     headers: { 'x-access-token': `${token}` }
+    };
+    //
+    axios.delete(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients/`+patientID, config)
     .then(response => {
       console.log(response);
       this.props.axiosGet(`http://patientfinder-api.herokuapp.com/hospitals/${this.props.hID}/patients`)

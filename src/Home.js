@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 
 import {
   Jumbotron
@@ -24,6 +24,17 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
+
+    //
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.setState({
+        isLoggedIn: true
+      });
+    }
+    //
+
+    /*
     axios.defaults.withCredentials = true;
     axios.get('http://patientfinder-api.herokuapp.com/profile')
       .then(response => {
@@ -35,6 +46,7 @@ export default class Home extends Component {
       .catch(error => {
         console.log('Error fetching data', error);
     });
+    */
   }
 
   render() {

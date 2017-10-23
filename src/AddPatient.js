@@ -66,7 +66,7 @@ export default class AddPatient extends Component {
                   <ControlLabel>Background</ControlLabel>
                 </Col>
                 <Col sm={10}>
-                  <FormControl componentClass="textarea" name="background" type="background" placeholder="Respiratory patient. Ideal history and examination" value={this.props.background} onChange={this.props.handleChange}/>
+                  <FormControl componentClass="textarea" name="background" type="background" placeholder="e.g. 'Respiratory patient. Take a history and carry out a chest examination'" value={this.props.background} onChange={this.props.handleChange}/>
                 </Col>
               </FormGroup>
 
@@ -75,7 +75,7 @@ export default class AddPatient extends Component {
                   Added By
                 </Col>
                 <Col sm={10}>
-                  <FormControl name="addedBy" type="addedBy" placeholder="Dr Wright" value={this.props.addedBy} onChange={this.props.handleChange}/>
+                  <FormControl name="addedBy" type="addedBy" placeholder="e.g. 'Dr John Snow - FY1'" value={this.props.addedBy} onChange={this.props.handleChange}/>
                 </Col>
               </FormGroup>
 
